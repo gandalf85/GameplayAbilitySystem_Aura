@@ -1,3 +1,5 @@
+To open project, open the .uproject file in Jetbrains Rider. Run or debug to launch Unreal and make changes there, be sure to "save all" before exiting back to Rider.
+
 …or create a new repository on the command line
 echo "# GameplayAbilitySystem_Aura" >> README.md
 git init

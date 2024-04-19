@@ -6,24 +6,22 @@
 #include "GameFramework/Character.h"
 #include "AuraCharacterBase.generated.h"
 
-UCLASS()
+UCLASS(Abstract)
 class AURA_API AAuraCharacterBase : public ACharacter
 {
 	GENERATED_BODY()
 
 public:
-	// Sets default values for this character's properties
+	// Sets default values
 	AAuraCharacterBase();
 
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-public:	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
-
-	// Called to bind functionality to input
-	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
-
+	// We attach a weapon to a socket on the skeletal mesh
+	// TObjectPtr has some additional features compared to a normal pointer in editor -- this is now the standard
+	UPROPERTY(EditAnywhere, Category = "Combat")
+	TObjectPtr<USkeletalMeshComponent> Weapon;
+	
 };
