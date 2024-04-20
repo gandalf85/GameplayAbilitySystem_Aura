@@ -13,3 +13,8 @@ git push -u origin main
 git remote add origin https://github.com/gandalf85/GameplayAbilitySystem_Aura.git
 git branch -M main
 git push -u origin main
+
+To do a commit:
+git add .
+git commit -m "Text"
+git push -u origin main

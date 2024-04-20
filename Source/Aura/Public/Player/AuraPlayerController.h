@@ -45,7 +45,8 @@ private:
 	void Move(const FInputActionValue& InputActionValue);
 
 	//The Cursor Trace keeps track of the last highlighted enemy and updates ThisActor when a valid target is highlighted
+	//Use of TObjectPtr is preferred over "raw" pointers
 	void CursorTrace();
-	IEnemyInterface* LastActor;
-	IEnemyInterface* ThisActor;
+	TObjectPtr<IEnemyInterface> LastActor;
+	TObjectPtr<IEnemyInterface> ThisActor;
 };

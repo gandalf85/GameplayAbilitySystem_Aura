@@ -88,8 +88,10 @@ void AAuraPlayerController::BeginPlay()
 
 	// Subsystems are singletons -- AuraContext has highest priority
 	UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(GetLocalPlayer());
-	check(Subsystem);
-	Subsystem->AddMappingContext(AuraContext, 0);
+	if (Subsystem)
+	{
+		Subsystem->AddMappingContext(AuraContext, 0);
+	}	
 
 	//Default mouse behavior -- show the default cursor
 	bShowMouseCursor = true;
